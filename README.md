@@ -39,3 +39,16 @@ This project involved designing a database for a food delivery application, from
 A web development project for an accommodation facility, featuring front-end technologies (HTML, CSS, JavaScript) and back-end functionality in PHP.
 
 [`https://www.domuslanghe.it`](https://www.domuslanghe.it)
+
+## **5. Chain Reaction Simulation in Unix**  
+*(Project for a University exam)*
+This project simulates a chain reaction using multiple processes in a Unix environment. The simulation involves inter-process communication (IPC) and synchronization mechanisms to manage and coordinate different roles, including master, atom, activator, inhibitor, and feeder processes. The master process handles statistics, while other processes simulate energy production, inhibition, and waste generation. The project demonstrates Unix concepts such as process control, shared memory, message queues, and signal handling.  
+
+**Deliverables:**  
+- Implementation of inter-process communication using message queues and shared memory.  
+- Process synchronization with semaphores to ensure consistent operations.  
+- Signal handling (SIGUSR1 and SIGUSR2) for process activation and inhibition.  
+- Configuration file support for runtime parameters using the INI format.  
+- Logging system to track simulation events and statistics in real-time.  
+
+This project showcases expertise in Unix systems programming, focusing on process management, IPC, and concurrency.
