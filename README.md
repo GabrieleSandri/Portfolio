@@ -51,4 +51,17 @@ This project simulates a chain reaction using multiple processes in a Unix envir
 - Configuration file support for runtime parameters using the INI format.  
 - Logging system to track simulation events and statistics in real-time.  
 
-This project showcases expertise in Unix systems programming, focusing on process management, IPC, and concurrency.
+## 6. E-mail Server & Client Application
+*(Project for a University exam)*
+**Description**  
+This project involves the creation of a client-server mail application built with **Java**, **JavaFX**, and **Maven**. The server handles incoming requests from multiple clients, processes them, and manages user email data stored in files. The client application, with a graphical user interface, allows users to send and receive emails. Communication between the server and client is done through object streams. The client is configured to work on a local network, where the server IP can be modified in the client controller. The application is built and managed with **Maven**, and development was done using **IntelliJ IDEA** as IDE.
+
+(Files were used to store data instead of a database due to a specific requirement of the project.)
+
+**Deliverables:**
+
+- **Server** (`src/com/example/server/support/server.java`):  
+  A multithreaded server that listens on a given port, handles client connections, processes email requests, and uses a `ReadWriteLock` to synchronize access to email files. It handles operations like sending, receiving, and deleting emails.
+
+- **Client** (`src/com/example/server/Communication.java`):  
+  A client application that communicates with the server to send and receive emails. It manages the user interface with **JavaFX** and allows the user to view their inbox, send new emails, and handle disconnections from the server. If the server goes offline, the client alerts the user and ensures that any pending actions are lost if not completed.
