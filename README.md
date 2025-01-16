@@ -52,9 +52,7 @@ This project simulates a chain reaction using multiple processes in a Unix envir
 - Logging system to track simulation events and statistics in real-time.  
 
 ## 6. E-mail Server & Client Application
-*(Project for a University exam)*
-**Description**  
-This project involves the creation of a client-server mail application built with **Java**, **JavaFX**, and **Maven**. The server handles incoming requests from multiple clients, processes them, and manages user email data stored in files. The client application, with a graphical user interface, allows users to send and receive emails. Communication between the server and client is done through object streams. The client is configured to work on a local network, where the server IP can be modified in the client controller. The application is built and managed with **Maven**, and development was done using **IntelliJ IDEA** as IDE.
+*(Project for a University exam)* This project involves the creation of a client-server mail application built with **Java**, **JavaFX**, and **Maven**. The server handles incoming requests from multiple clients, processes them, and manages user email data stored in files. The client application, with a graphical user interface, allows users to send and receive emails. Communication between the server and client is done through object streams. The client is configured to work on a local network, where the server IP can be modified in the client controller. The application is built and managed with **Maven**, and development was done using **IntelliJ IDEA** as IDE.
 
 (Files were used to store data instead of a database due to a specific requirement of the project.)
 
