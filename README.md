@@ -11,9 +11,12 @@ This project involves the implementation of various algorithms and data structur
 
 ### Deliverables:
    - Implementation of Marge Sort and Quick Sort algorithms, optimized for datasets up to 20 million records. `(EX1)`
+     **Video Demo:** [20 million sorting DEMO](https://youtu.be/1d4FPnIMZi8)
    - Dynamic Programming Edit distance calculation with memoization. `(EX2)`
+      **Video Demo:** [Text cheker DEMO](https://youtu.be/PcQRNddp0pI)
    - Implementation od data Structures Including priority queues and graph structures. `(EX3_4)`
    - Prim's algorithm using a priority queue and graph. `(EX3_4)`
+     **Video Demo:** [Prim's Algorithm DEMO](https://youtu.be/NTorSjNKTdY)
    
 
 ## 2. Custom Programming Language
@@ -25,6 +28,8 @@ This project involves the creation of a basic programming language for the JVM, 
    - A lexer that tokenizes the input program. `(SEZ_2)`
    - A translator that translate the token producted by lexer into instructions jasmine. `(SEZ_5)`
    - support classes. `(SEZ_5)`
+
+**Video Demo:** [Custom Programming Language DEMO](https://youtu.be/FXhreJDFMgU)
 
 ## 3. Database design for a food delivery application:
 *(Project for a University exam)*
@@ -49,7 +54,10 @@ This project simulates a chain reaction using multiple processes in a Unix envir
 - Process synchronization with semaphores to ensure consistent operations.  
 - Signal handling (SIGUSR1 and SIGUSR2) for process activation and inhibition.  
 - Configuration file support for runtime parameters using the INI format.  
-- Logging system to track simulation events and statistics in real-time.  
+- Logging system to track simulation events and statistics in real-time.
+
+ **Video Demo:** [Chain Reaction Simulation in Unix DEMO](https://youtu.be/xmnROg0XTN0)
+
 
 ## 6. E-mail Server & Client Application
 *(Project for a University exam)* This project involves the creation of a client-server mail application built with **Java**, **JavaFX**, and **Maven**. The server handles incoming requests from multiple clients, processes them, and manages user email data stored in files. The client application, with a graphical user interface, allows users to send and receive emails. Communication between the server and client is done through object streams. The client is configured to work on a local network, where the server IP can be modified in the client controller. The application is built and managed with **Maven**, and development was done using **IntelliJ IDEA** as IDE.
@@ -63,3 +71,5 @@ This project simulates a chain reaction using multiple processes in a Unix envir
 
 - **Client** (`src/com/example/server/Communication.java`):  
   A client application that communicates with the server to send and receive emails. It manages the user interface with **JavaFX** and allows the user to view their inbox, send new emails, and handle disconnections from the server. If the server goes offline, the client alerts the user and ensures that any pending actions are lost if not completed.
+
+**Video Demo:** [E-mail Server & Client Application DEMO](https://youtu.be/-gEK6whg0ww)
