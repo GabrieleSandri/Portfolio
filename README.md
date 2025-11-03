@@ -1,5 +1,5 @@
 # TeamWork Projects
-**Acquired skills:** TeamWork, algorithms and Data Structures, algorithms complexity, programming language compiler, DFA, sorting algorithms, Prim's algorithm, Java, C, memoization, OOP, dynamic programming, Unit testing, web development (HTML, CSS, Bootstrap, JavaScript, PHP, PHPMailer), SQL, Design of DataBase.
+**Acquired skills:** TeamWork, algorithms and Data Structures, algorithms complexity, programming language compiler, DFA, sorting algorithms, Prim's algorithm, Java, C, memoization, OOP, dynamic programming, Unit testing, web development (HTML, CSS, Bootstrap, JavaScript, PHP, PHPMailer), SQL, Design of DataBase, Node.js, Mongo DB, Socket.Io, Express.js, Java Spring.
 
 ## Team:
    - **[Gabriele Sandri](https://github.com/GabrieleSandri)**
@@ -68,6 +68,11 @@ This project simulates a chain reaction using multiple processes in a Unix envir
 
 - **Server** (`src/com/example/server/support/server.java`):  
   A multithreaded server that listens on a given port, handles client connections, processes email requests, and uses a `ReadWriteLock` to synchronize access to email files. It handles operations like sending, receiving, and deleting emails.
+  
+- **Client** (`src/com/example/server/Communication.java`):  
+  A client application that communicates with the server to send and receive emails. It manages the user interface with **JavaFX** and allows the user to view their inbox, send new emails, and handle disconnections from the server. If the server goes offline, the client alerts the user and ensures that any pending actions are lost if not completed.
+  
+**Video Demo:** [E-mail Server & Client Application DEMO](https://youtu.be/-gEK6whg0ww)
 
 ## 7. Movies Library Project  
 *(Project for a University exam)* 
@@ -75,19 +80,20 @@ This project implements a **Movies Library Web Application** with a responsive f
 The **frontend** offers a clean UI with dropdown search (by title, genre, or actor), paginated poster grid, detailed movie pages and a lightweight real-time chat.  
 The **MongoDB backend** manages dynamic data using Mongoose and async REST APIs, while the **Spring Boot backend** handles relational data with a layered JPA-based architecture.  
 Data were cleaned and normalized using **Python (Pandas)** to ensure consistency across databases.  
-[`Demo Video`](https://youtu.be/URryv5dAq6s?si=dMAioZ_mOfz-wwFQ)
+
 
 Focus areas: **modularity**, **performance**, and **usability**.  
 
-## Deliverables  
+**Deliverables:**
 - `queryexamples/` Some image exmaple of the web application ui
 - `mainServer/` Complete Report of the project
 - `solution/` Source Code
    - `mainServer/` Express.js + Hbs frontend 
    - `mongoServer/` MongoDB + Express.js backend  
-   - `serverSpringboot/` SpringBoot + PostgreSQL backend  
+   - `serverSpringboot/` SpringBoot + PostgreSQL backend
+     
+**Video Demo:** [Movies Library DEMO](https://youtu.be/URryv5dAq6s?si=dMAioZ_mOfz-wwFQ)
 
-- **Client** (`src/com/example/server/Communication.java`):  
-  A client application that communicates with the server to send and receive emails. It manages the user interface with **JavaFX** and allows the user to view their inbox, send new emails, and handle disconnections from the server. If the server goes offline, the client alerts the user and ensures that any pending actions are lost if not completed.
 
-**Video Demo:** [E-mail Server & Client Application DEMO](https://youtu.be/-gEK6whg0ww)
+
+
