@@ -1,0 +1,22 @@
+<div id="filmChat" class="container py-5" data-movie-id="{{id}}">
+    <h2 class="mb-4 text-center">💬 Chat about: <span class="text-primary">{{movieName}}</span></h2>
+
+    <!-- Initial form for username -->
+    <div id="usernameFormContainer" class="mb-4 text-center">
+        <form id="usernameForm" class="d-flex justify-content-center gap-2">
+            <input type="text" id="usernameInput" class="form-control w-25" placeholder="Enter your name" required/>
+            <button type="submit" class="btn btn-primary">Join Chat</button>
+        </form>
+    </div>
+
+    <!-- Chat box -->
+    <div id="chatContainer" style="display: none;">
+        <div id="chatBox" class="mb-3"></div>
+        <form id="chatForm" class="input-group">
+            <input type="text" id="chatInput" class="form-control" placeholder="Type a message..." required/>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="/javascripts/filmChat.js"></script>

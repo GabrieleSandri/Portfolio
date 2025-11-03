@@ -1,0 +1,590 @@
+:root {
+  --primary-light: #a3b8c7; /* Blu pastello chiaro */
+  --primary-dark: #4c6a8c;  /* Blu scuro pastello */
+  --accent: #f5a5a1; /* Rosa pastello delicato */
+  --background: rgba(255, 255, 255, 0.95); /* Sfondo trasparente chiaro */
+  --light-bg: rgba(240, 248, 255, 0.95); /* Sfondo azzurro pallido con trasparenza */
+  --text-light: #ffffff; /* Testo bianco luminoso */
+  --text-muted: rgba(128, 138, 146, 0.8); /* Grigio chiaro pastello */
+  --border-color: rgba(196, 204, 213, 0.5); /* Bordo grigio chiaro morbido */
+  --highlight: #a2d5f2; /* Azzurro chiaro per highlights */
+  --shadow-color: rgba(0, 0, 0, 0.08); /* Ombra leggera e soft */
+  --nav-bg: #5f7b8b; /* Grigio-blu pastello per navbar */
+  --nav-text: #f1f1f1; /* Testo chiaro e morbido per navbar */
+}
+
+/* Body e testo */
+body {
+  background-color: var(--light-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--primary-dark);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 1.5rem;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: var(--text-light) !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.navbar-nav .nav-link {
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--accent) !important;
+  outline: none;
+}
+
+/* Search input */
+.search-input {
+  border-radius: 30px;
+  padding: 12px 20px;
+  border: 2px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 350px;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 10px var(--highlight);
+  outline: none;
+}
+
+/* Select dentro input group */
+.input-group select {
+  width: 130px;
+  border-radius: 30px 0 0 30px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  border: none;
+  padding: 10px 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-group select:hover,
+.input-group select:focus {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  outline: none;
+}
+
+/* Input dentro input group */
+.input-group input {
+  border-radius: 0 30px 30px 0;
+  font-size: 1rem;
+}
+
+/* Film card */
+.film-card {
+  border: none;
+  border-radius: 16px;
+  background-color: var(--background);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.film-card:hover,
+.film-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.film-card img {
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: ease-in 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.film-card-notImg {
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: ease-in 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  font-family: Didot;
+}
+
+
+
+.film-card img:hover {
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: ease-out 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
+}
+
+
+
+.card-body {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.3rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-light);
+  color: var(--text-light);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Pagination */
+.pagination {
+  justify-content: center;
+  margin-top: 30px;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.pagination .page-item .page-link {
+  color: var(--primary-dark);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pagination .page-item .page-link:hover,
+.pagination .page-item .page-link:focus {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
+  outline: none;
+}
+
+/* Alert */
+.alert {
+  padding: 12px 24px;
+  color: white;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s;
+  font-weight: 700;
+  text-align: center;
+  min-width: 250px;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1050;
+  pointer-events: none;
+}
+
+.alert.success {
+  background-color: #4CAF50; /* Verde */
+}
+
+.alert.error {
+  background-color: #D32F2F; /* Rosso */
+}
+
+/* Chat box */
+#chatBox {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  color: var(--primary-dark);
+  scroll-behavior: smooth;
+}
+
+.message {
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+.username {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+/* Nuovi stili minimi per miglior accessibilità */
+button,
+a {
+  user-select: none;
+}
+
+button:focus,
+a:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Film details container */
+.film-details-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: var(--background);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--primary-dark);
+}
+
+/* Film info: divide left (poster) e right (testo) */
+.film-info {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.film-info-left {
+  flex: 1 1 250px;
+  max-width: 280px;
+}
+
+.film-info-left img.film-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  object-fit: cover;
+  user-select: none;
+}
+
+.film-info-left div.film-card-notImg {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  object-fit: cover;
+  user-select: none;
+}
+
+.film-info-right {
+  flex: 2 1 400px;
+}
+
+.film-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--primary-dark);
+}
+
+.film-year-category {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.film-actor {
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.film-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--primary-dark);
+}
+
+/* Sections (Lingue e Temi) in linea e compatte */
+.actors-crews-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Contenitori singoli per lingue e temi */
+.actors-section,
+.themes-section {
+  background-color: var(--light-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  color: var(--primary-dark);
+  flex: 1 1 250px;
+  min-width: 250px;
+}
+
+/* Titoli */
+.languages-section h2,
+.themes-section h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+/* Liste */
+.languages-section ul,
+.themes-section ul {
+  list-style: none inside;
+  padding-left: 0;
+  margin: 0;
+}
+
+
+.languages-section li,
+.themes-section li {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Sezione recensioni e chat restano inalterate */
+.reviews-section,
+.chat-section {
+  background-color: var(--light-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  color: var(--primary-dark);
+}
+
+.reviews-section h2,
+.chat-section h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.languages-section,
+.themes-section,
+.reviews-section,
+.chat-section {
+  /* per sicurezza mantieni colori coerenti */
+  color: var(--primary-dark);
+}
+
+/* Contenitore carosello recensioni */
+.reviews-carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.carousel-btn {
+  background-color: var(--primary-light);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+  cursor: pointer;
+  box-shadow: 0 2px 6px var(--shadow-color);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.carousel-btn:hover:not(:disabled),
+.carousel-btn:focus:not(:disabled) {
+  background-color: var(--accent);
+  outline: none;
+  color: var(--text-light);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Wrapper con overflow per scorrere */
+.reviews-list-wrapper {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1 1 auto;
+  max-width: 100%;
+  padding-bottom: 8px; /* Per spazio sotto */
+}
+
+/* Lista recensioni come flex row */
+.reviews-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+/* Singola recensione */
+.review-item {
+  flex: 0 0 320px; /* larghezza fissa per ogni recensione */
+  background-color: var(--background);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  padding: 1rem 1.5rem;
+  color: var(--primary-dark);
+  user-select: text;
+  outline-offset: 4px;
+  scroll-snap-align: start;
+}
+
+.review-item p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.review-text {
+  font-style: italic;
+  margin: 0.5rem 0 1rem 0;
+  color: var(--primary-dark);
+}
+
+/* Link Rotten Tomatoes */
+.rt-link {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: var(--accent);
+  color: var(--text-light);
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.rt-link:hover,
+.rt-link:focus {
+  background-color: var(--primary-dark);
+  outline: none;
+}
+
+/* Scrolling a scatto (optional) */
+.reviews-list-wrapper {
+  scroll-snap-type: x mandatory;
+}
+
+/* Stile per messaggi "nessuna recensione" */
+.text-muted {
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+
+/* Chat link button */
+.chat-link {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background-color: var(--accent);
+  color: var(--text-light);
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.chat-link:hover,
+.chat-link:focus {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .film-info {
+    flex-direction: column;
+  }
+  .film-info-left,
+  .film-info-right {
+    max-width: 100%;
+  }
+  /* Per mobile le sezioni lingue e temi in colonna */
+  .languages-themes-container {
+    flex-direction: column;
+  }
+  .languages-section,
+  .themes-section {
+    min-width: 100%;
+  }
+}
+
+
+.review-load-more-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  margin: 10px;
+  transition: background-color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.review-load-more-card:hover,
+.review-load-more-card:focus {
+  background-color: #e9e9e9;
+  transform: scale(1.02);
+  outline: none;
+}
+
+.load-more-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+

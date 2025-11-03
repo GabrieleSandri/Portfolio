@@ -1,0 +1,62 @@
+<!-- Hero Section -->
+<header class="text-center py-5">
+    <h1 class="fw-bold text-primary">Your Movie Collection</h1>
+    <p class="text-muted">Discover and manage your favorite films, wherever you are</p>
+</header>
+
+<!-- Search Bar with Category Dropdown -->
+<section class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Search form -->
+            <form id="searchForm">
+                <div class="input-group">
+                    <!-- Dropdown for search category -->
+                    <select class="form-select" id="searchCategory">
+                        <option value="name">Name</option>
+                        <option value="category">Category</option>
+                        <option value="actor">Actor</option>
+                    </select>
+
+                    <!-- Text input for search query -->
+                    <input
+                            type="text"
+                            class="form-control search-input"
+                            id="searchInput"
+                            placeholder="Search a movie..."
+                            name="query"
+                    />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Main Film Grid Section -->
+<main class="container pb-5">
+
+    <!-- Placeholder for rendering the movie list partial -->
+    <div id="filmList">
+        {{> filmList}}
+    </div>
+
+    <!-- Pagination Controls -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <!-- Previous page button -->
+            <li class="page-item">
+                <a class="page-link" id="moveBackward">Back</a>
+            </li>
+
+            <!-- Current page indicator -->
+            <li class="page-item active">
+                <a class="page-link" id="pageNum">1</a>
+            </li>
+
+            <!-- Next page button -->
+            <li class="page-item">
+                <a class="page-link" id="moveForward">Next</a>
+            </li>
+        </ul>
+    </nav>
+</main>

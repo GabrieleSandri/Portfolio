@@ -1,0 +1,160 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Movie App API",
+    "version": "1.0.0",
+    "description": "Web app for movie browsing, searching, details, chat, and reviews."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/search": {
+      "get": {
+        "summary": "Search for movies",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": { "type": "integer", "default": 0 },
+            "description": "Page number for pagination"
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "schema": { "type": "string" },
+            "description": "Filter category (actor, category, name)"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "schema": { "type": "string" },
+            "description": "Search term"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTML partial or full page of movies",
+            "content": { "text/html": {} }
+          },
+          "404": {
+            "description": "No content found",
+            "content": { "text/html": {} }
+          },
+          "500": {
+            "description": "Server error",
+            "content": { "text/html": {} }
+          }
+        }
+      }
+    },
+    "/movie/{id}": {
+      "get": {
+        "summary": "Get detailed movie info",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Unique movie ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Movie details rendered as HTML",
+            "content": { "text/html": {} }
+          },
+          "404": {
+            "description": "Movie not found",
+            "content": { "text/html": {} }
+          },
+          "500": {
+            "description": "Server error",
+            "content": { "text/html": {} }
+          }
+        }
+      }
+    },
+    "/movie/{id}/chat": {
+      "get": {
+        "summary": "Load chat UI for a movie",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": { "type": "integer" },
+            "description": "Movie ID for chat"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Chat page HTML",
+            "content": { "text/html": {} }
+          },
+          "404": {
+            "description": "Invalid chat request",
+            "content": { "text/html": {} }
+          },
+          "500": {
+            "description": "Server error",
+            "content": { "text/html": {} }
+          }
+        }
+      }
+    },
+    "/reviews/{id}": {
+      "get": {
+        "summary": "Get HTML block of reviews",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Movie ID to load reviews"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": { "type": "integer", "default": 1 },
+            "description": "Page index for review pagination"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTML partial containing review items",
+            "content": { "text/html": {} }
+          },
+          "500": {
+            "description": "Error while fetching reviews",
+            "content": { "text/html": {} }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Load home page with movies list",
+        "responses": {
+          "200": {
+            "description": "Home page rendered as HTML",
+            "content": { "text/html": {} }
+          },
+          "404": {
+            "description": "No movies found",
+            "content": { "text/html": {} }
+          },
+          "500": {
+            "description": "Server error",
+            "content": { "text/html": {} }
+          }
+        }
+      }
+    }
+  }
+}

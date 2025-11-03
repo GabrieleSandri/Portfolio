@@ -1,0 +1,13 @@
+{{#if reviews.length}}
+    {{#each reviews}}
+        {{> review}}
+    {{/each}}
+    <div id="showMore" class="review-item review-load-more-card" tabindex="0" role="button"
+         aria-label="Show more reviews">
+        <p class="load-more-text">️Show more reviews...</p>
+    </div>
+{{else}}
+    <div class="review-item review-load-more-card" tabindex="0" role="button" aria-label="Show more reviews">
+        <p class="load-more-text">️No reviews found</p>
+    </div>
+{{/if}}

@@ -1,0 +1,19 @@
+{{#if reviews.length}}
+    <section class="reviews-section" aria-label="Movie Reviews">
+        <h2 class="reviews-title">Reviews:</h2>
+
+        <!-- Carousel for scrolling through reviews -->
+        <div class="reviews-carousel" role="region" aria-live="polite" aria-label="Review carousel">
+            <!-- Previous review button -->
+            <button class="carousel-btn prev" aria-label="Previous review" disabled>‹</button>
+
+            <!-- Container for reviews -->
+            <div class="reviews-list reviews-list-wrapper" id="reviews-list">
+                {{>reviewsList}}
+            </div>
+
+            <!-- Next review button -->
+            <button class="carousel-btn next" aria-label="Next review">›</button>
+        </div>
+    </section>
+{{/if}}

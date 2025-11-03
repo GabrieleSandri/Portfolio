@@ -1,0 +1,135 @@
+<div id="filmdetails" class="container film-details-container" role="main" aria-labelledby="film-title"
+     data-movie-id="{{id}}">
+
+    <!-- Movie Details -->
+    <section class="film-info" aria-label="Movie Details">
+        <div class="film-info-left">
+
+            {{#if imageUrl}}
+                <!-- Movie poster image -->
+                <img
+                        src="{{imageUrl}}"
+                        class="film-poster"
+                        alt="Poster of the movie {{movieName}}"
+                        loading="lazy"
+                        decoding="async"
+                />
+            {{else}}
+                <!-- Placeholder if no image is available -->
+                <div class="film-card-notImg d-flex align-items-center justify-content-center bg-white text-black text-capitalize"
+                     style="height: 450px;">
+                    <h5 class="text-center px-2">{{movieName}}</h5>
+                </div>
+            {{/if}}
+
+        </div>
+        <div class="film-info-right">
+            <!-- Movie title -->
+            <h1 id="film-title" class="film-title text-capitalize">{{movieName}}</h1>
+
+            <!-- Release year -->
+            <p>Year: {{date}}</p>
+
+            <!-- Movie description -->
+            {{#if description}}
+                <p class="film-description">{{description}}</p>
+            {{else}}
+                <p class="film-description text-muted">Description not available.</p>
+            {{/if}}
+
+            <!-- Languages list -->
+            {{#if languages.length}}
+                <p class="film-country text-capitalize"><strong>Languages:</strong>
+                    {{#each languages}}
+                        <span class="language-type text-capitalize"><strong>{{type}}: </strong></span> {{language}}{{#if
+                            @last}}.{{else}}, {{/if}}
+                    {{/each}}
+                </p>
+            {{/if}}
+
+            <!-- Countries list -->
+            {{#if country.length}}
+                <p class="film-country text-capitalize"><strong>Countries:</strong>
+                    {{#each country}}
+                        <span class="language-type text-capitalize">{{name}}</span>{{#if @last}}.{{else}}, {{/if}}
+                    {{/each}}
+                </p>
+            {{/if}}
+
+            <!-- Studios list -->
+            {{#if studios.length}}
+                <p class="film-country text-capitalize"><strong>Studios:</strong>
+                    {{#each studios}}
+                        <span class="language-type text-capitalize">{{studio}}</span>{{#if @last}}.{{else}}, {{/if}}
+                    {{/each}}
+                </p>
+            {{/if}}
+
+        </div>
+    </section>
+
+    <div class="actors-crews-container">
+        <!-- Actors and Crews Section -->
+        <div class="actors-section">
+            <h3>Actors</h3>
+            <p class="film-actor text-capitalize">
+                {{#if actors.length}}
+                    {{#each actors}}
+                        {{#if role}}
+                            <strong>{{role}}:</strong>
+                        {{/if}}
+                        {{name}}{{#if @last}}.{{else}}, {{/if}}
+                    {{/each}}
+                {{else}}
+                    <li>No actors available.</li>
+                {{/if}}
+            </p>
+
+            <h3>Crews</h3>
+            <p class="film-actor text-capitalize">
+                {{#if crews.length}}
+                    {{#each crews}}
+                        <strong>{{role}}:</strong> {{name}}{{#if @last}}.{{else}}, {{/if}}
+                    {{/each}}
+                {{else}}
+                    <li>No crew available.</li>
+                {{/if}}
+            </p>
+        </div>
+
+        <!-- Themes Section -->
+        <div class="themes-section">
+            <h3>Themes</h3>
+            <ul>
+                {{#if themes.length}}
+                    {{#each themes}}
+                        <li>{{theme}}{{#if @last}}.{{else}}, {{/if}}</li>
+                    {{/each}}
+                {{else}}
+                    <li>No themes available.</li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Reviews Partial -->
+    {{>reviewSection}}
+
+    <!-- Oscars Partial -->
+    {{>oscarsList}}
+
+    <!-- Chat Link Section -->
+    <section class="chat-section" aria-label="Movie Chat">
+        <header class="chat-header">
+            <h3 class="chat-title">Movie Chat</h3>
+        </header>
+        <div class="chat-body">
+            <p class="chat-info">Want to talk about this movie with other users?</p>
+            <a href="/movie/{{id}}/chat" class="btn-send chat-link" role="button" tabindex="0">
+                Go to Chat
+            </a>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="/javascripts/reviews.js"></script>
+</div>

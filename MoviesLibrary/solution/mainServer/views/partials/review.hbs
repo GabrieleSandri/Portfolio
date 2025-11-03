@@ -1,0 +1,11 @@
+<div class="review-item" tabindex="0" role="article" aria-label="Recensione di {{critic_name}}">
+    <p><strong>Critic:</strong> {{critic_name}} ({{publisher_name}})</p>
+    <p><strong>Date:</strong> {{review_date}}</p>
+    <p><strong>Score:</strong> {{review_score}}/10</p>
+    <p class="review-text">"{{review_content}}"</p>
+    <p>{{#if top_critic}}⭐ Top Critic{{/if}}</p>
+    {{#if rotten_tomatoes_link}}
+        <p><a href="https://www.rottentomatoes.com/{{rotten_tomatoes_link}}" target="_blank" rel="noopener noreferrer"
+              class="rt-link">🔗 Rotten Tomatoes</a></p>
+    {{/if}}
+</div>

@@ -1,0 +1,287 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Mongo Movies API",
+    "version": "1.0.0",
+    "description": "API for retrieving movie-related data such as reviews, releases, posters, languages, studios, and themes."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001",
+      "description": "Local development server"
+    }
+  ],
+  "paths": {
+    "/reviews/{movie_id}": {
+      "get": {
+        "summary": "Get all reviews by movie ID",
+        "parameters": [
+          {
+            "name": "movie_id",
+            "in": "path",
+            "description": "ID of the movie",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 123
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of reviews",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Review"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/releases/{movie_id}": {
+      "get": {
+        "summary": "Get all releases by movie ID",
+        "parameters": [
+          {
+            "name": "movie_id",
+            "in": "path",
+            "description": "ID of the movie",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 123
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of releases",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Release"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/posters/{movie_id}": {
+      "get": {
+        "summary": "Get poster by movie ID",
+        "parameters": [
+          {
+            "name": "movie_id",
+            "in": "path",
+            "description": "ID of the movie",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 123
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Poster object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Poster"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/languages/{movie_id}": {
+      "get": {
+        "summary": "Get all languages by movie ID",
+        "parameters": [
+          {
+            "name": "movie_id",
+            "in": "path",
+            "description": "ID of the movie",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 123
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of languages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Language"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/studios/{movie_id}": {
+      "get": {
+        "summary": "Get all studios by movie ID",
+        "parameters": [
+          {
+            "name": "movie_id",
+            "in": "path",
+            "description": "ID of the movie",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 123
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of studios",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Studio"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/themes/{movie_id}": {
+      "get": {
+        "summary": "Get all themes by movie ID",
+        "parameters": [
+          {
+            "name": "movie_id",
+            "in": "path",
+            "description": "ID of the movie",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 123
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of themes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Theme"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Review": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "60c72b2f9b1e8c001cf7a3f1" },
+          "movie_id": { "type": "integer", "example": 123 },
+          "critic_name": { "type": "string", "example": "John smith" },
+          "publisher_name": { "type": "string", "example": "Rotten Tomatoes" },
+          "review_date": { "type": "string", "example": "2004-02-20T00:00:00.000Z" },
+          "review_score": { "type": "number", "format": "float", "example": 4.5 },
+          "review_content": { "type": "string", "example": "Great movie, loved it!" },
+          "review_type": { "type": "string", "example":"fresh" },
+          "top_critic": { "type": "boolean", "example":"true" },
+          "rotten_tomatoes_link": { "type": "string", "example":"https://example.it" }
+        }
+      },
+
+      "Release": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "60c72b2f9b1e8c001cf7a3f2" },
+          "movie_id": { "type": "integer", "example": 123 },
+          "country_name": { "type": "string", "example": "USA" },
+          "date": { "type": "string", "format": "date", "example": "2023-05-01" },
+          "type": { "type": "string", "example": "Theatrical" },
+          "rating": { "type": "string", "example": "PG-13" }
+        }
+      },
+      "Poster": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "60c72b2f9b1e8c001cf7a3f3" },
+          "movie_id": { "type": "integer", "example": 123 },
+          "link": { "type": "string", "example": "https://example.com/poster.jpg" }
+        }
+      },
+      "Language": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "60c72b2f9b1e8c001cf7a3f4" },
+          "movie_id": { "type": "integer", "example": 123 },
+          "type": { "type": "string", "example": "spoken" },
+          "language": { "type": "string", "example": "English" }
+        }
+      },
+      "Studio": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "60c72b2f9b1e8c001cf7a3f5" },
+          "movie_id": { "type": "integer", "example": 123 },
+          "studio": { "type": "string", "example": "Warner Bros." }
+        }
+      },
+      "Theme": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "60c72b2f9b1e8c001cf7a3f6" },
+          "movie_id": { "type": "integer", "example": 123 },
+          "theme": { "type": "string", "example": "Adventure" }
+        }
+      }
+    }
+  }
+}

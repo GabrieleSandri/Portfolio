@@ -1,0 +1,13 @@
+{{#if oscars.length}}
+    <section class="reviews-section" aria-label="Recensioni del film">
+        <h2 class="reviews-title">Oscar Awards:</h2>
+
+        <div class="reviews-carousel" role="region" aria-live="polite" aria-label="Scorrimento recensioni">
+            <div class="reviews-list reviews-list-wrapper" id="reviews-list">
+                {{#each oscars}}
+                    {{> oscar}}
+                {{/each}}
+            </div>
+        </div>
+    </section>
+{{/if}}
