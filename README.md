@@ -70,7 +70,7 @@ This project simulates a chain reaction using multiple processes in a Unix envir
   A multithreaded server that listens on a given port, handles client connections, processes email requests, and uses a `ReadWriteLock` to synchronize access to email files. It handles operations like sending, receiving, and deleting emails.
 
 ## 7. Movies Library Project  
-*(University project – IUM-TWEB, 12 CFU)*  
+*(Project for a University exam)* 
 This project implements a **Movies Library Web Application** with a responsive frontend and two backend architectures (MongoDB and Spring Boot with PostgreSQL). It allows users to browse and search movies through a modular and scalable design.  
 The **frontend** offers a clean UI with dropdown search (by title, genre, or actor), paginated poster grid, detailed movie pages and a lightweight real-time chat.  
 The **MongoDB backend** manages dynamic data using Mongoose and async REST APIs, while the **Spring Boot backend** handles relational data with a layered JPA-based architecture.  
